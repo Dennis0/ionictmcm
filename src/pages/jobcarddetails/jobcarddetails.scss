@@ -1,0 +1,64 @@
+page-jobcarddetails {
+
+    .item.item-trns {
+        border-color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
+        color: #000; 
+    }
+    .select-items{
+       // border-color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
+        color: #000; 
+
+    }
+
+    .jcdetmainheaders{
+            text-align: center; 
+            color: #FF0000;
+    }
+
+    #jcdetailftxti{
+        border-color: rgba(57, 218, 234, 0.00);
+        color: #000;
+    }
+    #jcdetailsselectpick{
+        text-align: center;
+        color: #000;
+     
+    }
+    #cnamesearchbartrans{
+        background: transparent;
+    }
+    .jcsave-button {
+        width: 100%;
+        font-size: 0.9em;
+        background-color: #FF9800;
+      }
+      .placeholderhidden{
+         visibility: hidden;
+      }
+   
+    #jcdetailsselect{
+        color: #000;
+     
+        /* PLACEHOLDER ALIGN CENTRE- */
+     ::-webkit-input-placeholder {
+        text-align: center;
+     }
+    
+     :-moz-placeholder { 
+        text-align: center;  
+     }
+     
+     ::-moz-placeholder {  
+        text-align: center;  
+     }
+     
+     :-ms-input-placeholder {  
+        text-align: center; 
+     }
+       /*END OF PLACEHOLDER ALIGN CENTRE- */
+    }
+    
+
+}

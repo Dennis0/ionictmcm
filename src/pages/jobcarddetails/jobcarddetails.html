@@ -1,0 +1,88 @@
+<!--
+  Generated template for the JobcarddetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Jobcard Details</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+  <form [formGroup]="jcdetailsformgroup">
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item class="item item-trns text-center">
+            <ion-label class="jcdetmainheaders">Client Details</ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-item no-lines class="select-items">
+          <ion-select formControlName="jcdetailsctype" placeholder="Client Type" id="jcdetailsselectpickclty" (ionChange)="onCustomertypechanf(jcdetailsctype)">
+            <!--<ion-option value="1">New</ion-option>
+            <ion-option value="2">Existing</ion-option>-->
+            <ion-option *ngFor="let c of clienttypes" [value]="c.ctyval">{{c.ctydesc}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-input  class="item item-trns text-center" *ngIf="iftoshownewclcr" formControlName="jcdetailscname" placeholder="Client Name"  type="text" id="jcdetailftxti"></ion-input>
+        <ion-input  class="item item-trns text-center" *ngIf="iftoshownewclcr"  formControlName="jcdetailscphone" placeholder="Phone Number" type="text" id="jcdetailftxti"></ion-input>
+       
+        <ion-auto-complete [dataProvider]="completeTestService"  *ngIf="iftoshownewclcrext"  id="jcdetailsselect" [options]="{ placeholder : 'Client Name',formControlName : 'jcdetailscnamea' }">
+        </ion-auto-complete>
+        <ion-input formControlName="jcdetailscphonea"  *ngIf="iftoshownewclcrext"  placeholder="Phone Number" type="text" id="jcdetailftxti"></ion-input>
+       
+        <ion-input formControlName="jcdetailsccharges" placeholder="Client Charges" type="text" id="jcdetailftxti"></ion-input>
+        <ion-item no-lines class="select-items">
+          <ion-select formControlName="jcdetailsfnanty" placeholder="Financier Type" id="jcdetailsselectpickfty" (ionChange)="onftyChange(jcdetailsfnanty)">
+            <ion-option *ngFor="let f of financiertypes" [value]="f.jobcardtydescr">{{f.jobcardtydescr}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-auto-complete [hidden]="!ftyvalue" [dataProvider]="completeFinancierService" id="jcdetailsselect" [options]="{placeholder : 'Financier',formControlName : 'jcdetailsfnan' }">
+        </ion-auto-complete>
+        <ion-input placeholder="" readonly="true"></ion-input>
+        <ion-list>
+          <ion-item class="item item-trns text-center">
+            <ion-label class="jcdetmainheaders">Contact Person</ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-auto-complete [dataProvider]="completeSupplierService" id="jcdetailsselect" [options]="{ placeholder : 'Supplier Name',formControlName : 'jcdetailssuppname' }">
+        </ion-auto-complete>
+        <ion-input formControlName="jcdetailssuppphone" placeholder="Supplier Phone" type="text" id="jcdetailftxti"></ion-input>
+        <ion-input formControlName="jcdetailssuppcharges" placeholder="Supplier Charges" type="text" id="jcdetailftxti"></ion-input>
+        <ion-list>
+          <ion-item class="item item-trns text-center">
+            <ion-label class="jcdetmainheaders">Vehicle Details</ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-input formControlName="jcdetailsregno" type="text" placeholder="Registration number" id="jcdetailftxti"></ion-input>
+        <ion-input formControlName="jcdetailsmodel" type="text" placeholder="Model" id="jcdetailftxti"></ion-input>
+        <ion-input formControlName="jcdetailschasis" type="text" placeholder="Chasis no." id="jcdetailftxti"></ion-input>
+        <ion-input formControlName="jcdetailseng" type="text" placeholder="Engine" id="jcdetailftxti"></ion-input>
+        <ion-input formControlName="jcdetailscol" type="text" placeholder="Color" id="jcdetailftxti"></ion-input>
+        <ion-input formControlName="jcdetailslocation" type="text" placeholder="Location" id="jcdetailftxti"></ion-input>
+        <ion-list>
+          <ion-item class="item item-trns text-center">
+            <ion-label class="jcdetmainheaders">Installation Location Details</ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-item no-lines class="select-items">
+          <ion-select formControlName="jcdetailsinslocdetbranch" placeholder="Branch" id="jcdetailsselectpickbr">
+            <ion-option *ngFor="let b of installationbranches" [value]="b.branchid">{{b.branchdescription}}</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <!--<button ion-button class="login-button" (click)="login()">Login</button>[disabled]="!loginformgroup.valid"-->
+        <ion-list inset class="no-border-card-sub-btn">
+          <button ion-button class="jcsave-button" type="submit">Submit</button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

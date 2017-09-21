@@ -1,0 +1,40 @@
+page-main-activity-fragment {
+
+    #mainaffheaders{
+        text-align: center; 
+    }
+    #mainafinputitms{
+        text-align: center;
+     // text-align: right;
+    
+    }
+
+    .mainfsearch-button {
+        width: 100%;
+        font-size: 0.9em;
+        background-color: #FF9800;
+      }
+
+      #mainact-rowplaceholder{
+          height: 80px;
+      }
+      
+  /* PLACEHOLDER ALIGN CENTRE- */
+      ::-webkit-input-placeholder {
+        text-align: center;
+     }
+    
+     :-moz-placeholder { /* Firefox 18- */
+        text-align: center;  
+     }
+     
+     ::-moz-placeholder {  /* Firefox 19+ */
+        text-align: center;  
+     }
+     
+     :-ms-input-placeholder {  
+        text-align: center; 
+     }
+       /*END OF PLACEHOLDER ALIGN CENTRE- */
+
+}
